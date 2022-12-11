@@ -3,7 +3,7 @@ import "./UsersList.css";
 import UserItem from "./UserItem";
 import Card from "../../shared/components/UIElements/Card";
 
-const UserList = (props) => {
+const UsersList = (props) => {
   if (props.items.length === 0) {
     return (
       <div className="center">
@@ -22,11 +22,11 @@ const UserList = (props) => {
           id={user.id}
           image={user.image}
           name={user.name}
-          placeCount={user.places}
+          placeCount={user.places.length}
         />
       ))}
     </ul>
   );
 };
 
-export default UserList;
+export default UsersList;
