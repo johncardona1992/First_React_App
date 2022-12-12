@@ -12,13 +12,13 @@ const Users = () => {
       try {
         const responseData = await sendRequest(
           "http://localhost:5000/api/users"
-        );
+          );
         setLoadedUsers(responseData.users);
       } catch (err) {}
     };
     fetchUsers();
   }, [sendRequest]);
-
+  
 
   return (
     <React.Fragment>

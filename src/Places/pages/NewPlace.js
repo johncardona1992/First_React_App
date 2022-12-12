@@ -12,6 +12,7 @@ import { useForm } from "../../shared/Hooks/form-hook";
 import { useHttpClient } from "../../shared/Hooks/http-hook";
 import { useContext } from "react";
 import { AuthContext } from "../../shared/context/auth-context";
+import { useHistory } from "react-router-dom";
 
 const NewPlace = () => {
   const auth = useContext(AuthContext);
@@ -24,6 +25,8 @@ const NewPlace = () => {
     },
     false
   );
+
+  const history = useHistory();
 
   const placeSubmitHandler = async (event) => {
     event.preventDefault();
@@ -39,6 +42,7 @@ const NewPlace = () => {
         }),
         { "Content-Type": "application/json" }
       );
+      history.push("/");
     } catch (err) {}
   };
 
